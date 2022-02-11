@@ -1,0 +1,843 @@
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	        box-sizing: inherit;
+}
+html, body {width: 100%;min-height: 100%;}
+html {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	overflow-x: hidden;
+  overflow-y: scroll;
+}
+body{
+  padding:0;
+  margin:0;
+	width:100%;
+	background:#171632;
+}
+a{
+	text-decoration: none;
+	color:#fff;
+	font-size:1.0em;
+	font-weight: 200;
+
+}
+ui,li{
+	list-style: none;
+}
+
+/*-----------*/
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	        box-sizing: inherit;
+}
+html, body {width: 100%;min-height: 100%;}
+html {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	overflow-x: hidden;
+  overflow-y: scroll;
+}
+body{
+  font-family: "A1ゴシック M","A1 Gothic M","ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","Hiragino Sans","游ゴシック Medium",YuGothic,YuGothicM,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Helvetica Neue",メイリオ,Meiryo;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #fff;
+	background:#171632;
+  letter-spacing: .02em;
+  font-feature-settings: "palt";
+  -webkit-font-feature-settings: "palt";
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  padding:0;
+  margin:0;
+	width:100%;
+}
+
+/**/
+/*-----------*/
+/*オープニング*/
+/*-----------*/
+
+/*ここまで*/
+.mainSite {
+  position:relative;
+  top:0;
+  left:0;
+	right:0;
+	bottom:0;
+  padding:0;
+  margin:0;
+  width: 100%;
+  height:100vh;
+}
+/*bubbles*/
+#view {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  perspective: 240px;
+  position: fixed;
+
+}
+.dot {
+  background-color: rgba(25,25,205,0.8);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+/*ここまで*/
+/**************/
+/*ここから本文*/
+/**************/
+/*----------------------*/
+/*画像自動スライダーと表題*/
+/*----------------------*/
+#top{
+	width:95%;
+	margin:0 auto;
+	height:100vh;
+	display:flex;
+	position:relative;
+	overflow: hidden;
+}
+.title-wrapper,.slidesWrap{
+	width:50%;
+}
+.title{
+	display: block;
+	text-transform: uppercase;
+	font-weight: bold;
+  font-size:4.25em;
+  color:transparent ;
+	text-stroke: 0.5px #edece7;
+  -webkit-text-stroke:0.5px #edece7;
+  font-family: "Poppins", sans-serif;
+	margin-top:6%;
+	margin-left:10%;
+}
+/*スライダー*/
+.slide{
+  width:38vw;
+  height:55vh;
+  overflow: hidden;
+}
+.slides img{
+  width:100%;
+  height:105%;
+  display:block;
+  object-fit: cover;
+  object-position: center center;
+  filter: grayscale(100%) contrast(140%);
+}
+.slidesWrap{
+	margin-top:50px;
+  position: relative;
+}
+.slidesWrap .slides{
+  position: relative;
+  z-index: 1;
+}
+.slidesWrap .slides .slide{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+/*レスポンシブ*/
+@media all and (max-width:800px){
+	#top{
+		width:95%;
+		margin:0 auto;
+		height:100vh;
+		display:block;
+	}
+	.title-wrapper,.slidesWrap{
+		width:100%;
+	}
+	.title{
+		text-align: center;
+		margin-top:0px;
+		margin-left:0%;
+		width:100%;
+	  font-size:46px;
+	}
+	.slide {
+		width: 70vw;
+	  height: 80vh;
+	  position: absolute;
+		top:14%;
+		left:15%;
+	}
+}
+@media all and (max-width:550px){
+	.title{
+		text-align: center;
+		margin-top:20px;
+		margin-left:0%;
+		width:100%;
+	  font-size:46px;
+	}
+	.slide {
+		width: 82vw;
+	  height: 45vh;
+	  position: absolute;
+		top:16%;
+		left:0%;
+	}
+}
+@media all and (max-width:330px){
+	.title{margin-top:10px;}
+	.slide {top:16%;}
+}
+/*ここまで*/
+/*scroll-down*/
+.link {
+	position:absolute;
+	top:0%;
+	left:12%;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px;
+  text-decoration: none;
+  transform: rotate(-90deg) translate3d(-300px, 0, 0);
+}
+.link__arrow {display: inline-flex;}
+.link__arrow span {
+  position: relative;
+  width: 14px;
+  height: 2px;
+  border-radius: 2px;
+  overflow: hidden;
+  background:rgba(225,225,225,0.02) ;/*ホバー前の矢印*/
+  z-index: 2;
+}
+.link__arrow span:nth-child(1) {
+  transform-origin: left bottom;
+  transform: rotate(45deg) translate3d(8px, -10px, 0);
+}
+.link__arrow span:nth-child(2) {
+  transform-origin: left bottom;
+  transform: rotate(-45deg);
+}
+.link__arrow span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background:#edece7;
+}
+.link__line {
+  position: relative;
+  margin-left: -14px;
+  margin-right: 10px;
+  width: 100px;
+  height: 2px;
+  background:rgba(225,225,225,0.02) ;/*ホバー前の矢印*/
+  overflow: hidden;
+  z-index: 1;
+}
+.link__line:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  width: 100px;
+  height: 2px;
+  background:#edece7;
+	transform: scale(0, 1);
+	transform-origin: bottom right;
+}
+.link__text {
+  color:#edece7;
+  font-family: "Oswald", sans-serif;
+  font-size: 16+px;
+  text-transform: uppercase;
+	transform: translateX(20px);
+	animation:animation-text 3.9s ease-out infinite;
+}
+@keyframes animation-text{
+	90%{transform: translateX(0);}
+	100%{transform: translateX(20px);}
+}
+.link .link__line:after {animation: animation-line 3.9s ease-out infinite;}
+.link .link__arrow span:after {animation: animation-arrow 3.9s ease-out infinite;}
+@keyframes animation-line{
+	0% { transform: scale(0, 1); }
+  30% { transform: scale(0, 1); }
+  40% { transform: scale(1, 1); }
+  85% { transform: scale(1, 1); opacity: 1;}
+  90% { transform: scale(1, 1); opacity: 1; }
+  100% { transform: scale(0.2, 1); opacity: 0.3; }
+}
+@keyframes animation-arrow {
+  0% {width: 0;}
+	36%{width:0;}
+	90%{width:100%;}
+  100% {width: 10%;}
+}
+
+@media all and (max-width:800px){
+	.link {left:38%;margin-top:10px;z-index:4;}
+	.link__line {width: 80px;}
+	.link__line:after {width: 80px;}
+}
+@media all and (max-width:660px){
+	.link {left:38%;margin-top:-30px;}
+}
+@media all and (max-width:550px){
+	.link {left:77%;margin-top:0px;}
+}
+@media all and (max-width:420px){
+	.link {left:70%;margin-top:0px;}
+}
+@media all and (max-width:380px){
+	.link {left:69.6%;margin-top:-30px;}
+}
+@media all and (max-width:365px){
+	.link {left:68%;margin-top:-40px;}
+}
+@media all and (max-width:330px){
+	.link {left:68%;margin-top:-70px;}
+}
+@media all and (max-width:290px){
+	.link {left:63%;margin-top:-80px;}
+}
+/*ここまで*/
+/*********/
+/*本文開始*/
+/*********/
+.container{width:100%;max-width:980px;margin:0px auto 40px;}
+/*タイトルテキストが下からフワット*/
+.block,.block1,.block2 {
+  display:block;
+  text-align:center;
+  padding:40px 0;
+  opacity: 0;
+}
+.block span,.block1 span,.block2 span {
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+}
+.top{
+  font-family: "Canela Web",serif;
+  font-weight: 400;
+  font-size: 4.075em;
+  color:#eff;
+  height:75px;
+  line-height: 75px;
+  overflow: hidden;
+  margin-bottom: 0px;
+}
+.bottom{
+  font-size:1.4em;
+  font-weight:900;
+  font-family:monospace;
+  color:#34a9e6;
+  height:40px;
+  line-height: 40px;
+  letter-spacing: 0.08em;
+  overflow: hidden;
+  opacity:1;
+	perspective: 1000px;
+}
+
+/*レスポンシブ*/
+@media all and (max-width:1070px){
+	.container{padding:0 15px;}
+}
+@media all and (max-width:800px){
+	.top{font-size:36px;}
+	.container{padding:0;width:85%;}
+}
+@media all and (max-width:330px){
+	.top{font-size:32px;}
+}
+/*ここまで*/
+/****************/
+/*会社概要＆沿革*/
+/***************/
+#info01{width:100%;padding:0 0 50px;}
+#info02,#info03{width:100%;padding:50px 0 ;}
+.io.js-active::before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition: -webkit-transform 1.3s cubic-bezier(0.87, 0, 0.13, 1);
+  transition: -webkit-transform 1.3s cubic-bezier(0.87, 0, 0.13, 1);
+  transition: transform 1.3s cubic-bezier(0.87, 0, 0.13, 1);
+  transition: transform 1.3s cubic-bezier(0.87, 0, 0.13, 1), -webkit-transform 1s cubic-bezier(0.87, 0, 0.13, 1);
+	transition-delay:0.3s;
+}
+.io::before {
+	content: "";
+  display: block;
+	margin:0 auto;
+  width: 60%;
+  height: 2px;
+  background-color: #e5e5e5;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 50% 0;
+  transform-origin:50% 0;
+}
+.info{
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  color:dimgray;
+}
+.info table tr{
+  width:100%;
+  display:flex;
+  border-collapse:collapse;
+  padding:12px 0;
+	border-bottom: 1px solid #444;
+}
+.info table th{
+  display:inline-block;
+  width:30%;
+  font-size:1.0em;
+  font-weight: 400;
+  font-family: "游ゴシック体", YuGothic, "YuGothic M", sans-serif;
+  letter-spacing: 0.07em;
+  line-height:1.8;
+	text-align:left;
+  padding-left:10px;
+	word-break: break-all;
+	color:#fff;
+}
+.info table td{
+  display:inline-block;
+  width:70%;
+	font-family: 'NotoSansJP-Light',"ヒラギノ角ゴ Pro W5", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size:0.975em;
+  font-weight: 100;
+  line-height: 2.5;
+  letter-spacing: 0.12em;
+  color:#eff;
+  word-break: break-all;
+}
+#info02 table td{white-space: nowrap;}
+.info table li{list-style:square;}
+.info table ul{padding-left:10px; line-height:2.2;}
+.info .sub{padding-left:-10px;}
+.info .sub li{list-style: none;}
+.info .sub li p{padding:20px 0;}
+.info .sub .files{padding:15px 0;}
+.box p{
+  margin-left:28px;
+  margin-top:-15px;
+  font-size:1.1em;
+  color:dimgray;}
+.info a{color:#00ff00; opacity:1.0;padding:10px 0;}
+/*レスポンシブ*/
+@media all and (max-width:880px){
+	#info02 table td{white-space:normal;}
+}
+@media all and (max-width:380px){
+	.info table td{padding-left:10px;}
+}
+/****************/
+/*アクセスマップ*/
+/***************/
+#info3{position: relative;}
+.map{padding:10px 0 40px;width:100%;display:flex;}
+.map .cont{
+  width:50%;
+  max-height:450px;
+  display: block;
+  text-align:left;
+  position:relative;
+}
+.map .cont iframe{
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+  filter: grayscale(0.8);
+}
+.map .remark{width:50%;padding-left:80px;text-align: left;}
+.map .remark h6{
+	font-family: 'NotoSansJP-Light',"ヒラギノ角ゴ Pro W5", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size:0.9075em;
+  font-weight: 100;
+  line-height: 2.5;
+  letter-spacing: 0.11em;
+  color:#eff;
+  white-space: nowrap;
+}
+.map .remark h4{
+  font-family: "游ゴシック体", YuGothic, "YuGothic M", sans-serif;
+  color:#fff;
+  padding-bottom:10px;
+}
+/*SVG矢印*/
+#svg{
+	position: absolute;
+	left:46%;
+	display:block;
+	width: 200px;
+  height: 200px;
+	margin:40px auto 0;
+}
+#svg .draw-arrow {
+  stroke-width: 1;
+  stroke: dodgerblue;
+  fill: none;
+  stroke-dasharray: 550;
+  stroke-dashoffset: 550;
+}
+#svg .draw-arrow.on{
+	-webkit-animation-duration: 4.5s;
+          animation-duration: 4.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: draw;
+          animation-name: draw;
+	/*-webkit-animation-iteration-count:infinite;
+					animation-iteration-count:infinite;*/
+	-webkit-animation-timing-function:cubic-bezier(.74,.14,.37,.97);
+					animation-timing-function:cubic-bezier(.74,.14,.37,.97);
+}
+#svg .draw-arrow.tail-1.on {
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+#svg .draw-arrow.tail-2.on {
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+}
+@-webkit-keyframes draw {
+	20%{stroke-dashoffset: 550;}
+  100% {stroke-dashoffset: 0;}
+}
+@keyframes draw {
+	20%{stroke-dashoffset: 550;}
+  100% {stroke-dashoffset: 0;}
+}
+/**/
+/*コンタクトボタン*/
+.contactBtn{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+.button1 {
+  margin:140px 0 80px;
+  position: relative;
+  display: inline-block;
+  padding: .5em 4.0em .5em 2.0em;
+  background: #333;
+  border: 2px solid #333;
+	border-radius: 26px;
+  color: #fff;
+  text-align: left;
+	font-size:1.25em;
+	letter-spacing:0.01em;
+	font-weight:100;
+}
+.button1::after {
+  position: absolute;
+  top: 50%;
+  right:2.5em;
+  content: '';
+  margin-top: -5px;
+	width: 6px;
+  height: 6px;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: rotate(45deg);
+	animation: arrow-left .8s ease-in-out forwards;
+}
+.button1:hover::after {animation: arrow-right .8s ease-in-out forwards}
+@keyframes arrow-right {
+	30% {	opacity: 1}
+	50% {transform: translateX(1rem) rotate(45deg);opacity: 0;}
+	70% {transform: translateX(-2rem) rotate(45deg);opacity: 0;}
+}
+@keyframes arrow-left {
+	30% {transform: translateX(-2rem) rotate(45deg);opacity: 0;}
+	50% {transform: translateX(1rem) rotate(45deg);opacity: 0;}
+	70% {	opacity: 1}
+}
+
+/*ここまで*/
+/*レスポンシブ*/
+@media all and (max-width:800px){
+	.fade{opacity: 0;transform: translateY(50px);transition: all 0.8s;}
+	.map{display:block;}
+	.map .cont{width:90%;min-height: 300px;height: 100%;margin:0 auto;}
+	.map .remark{width:100%;padding-left:0px;padding-top:50px;}
+	.button1 { margin:60px 0 40px;}
+	#svg{left:42%;margin:-20px auto 0;}
+}
+
+/*ここまで*/
+/*********/
+/*drawing*/
+/*********/
+.loop-wrapper {
+	margin: 0 auto;
+  position: relative;
+  display: block;
+	width:60%;
+  height: 210px;
+  overflow: hidden;
+  border-bottom: 3px solid #fff;
+  background:linear-gradient(to bottom, #102c3f 0%, #30567b 64%,#eee 100%) ;
+}
+.car-back{
+	width:100%;
+	height:100%;
+	background:url('../imgs/image/city_transparent-min.png') no-repeat;
+	background-position:left -10%;
+	background-size:105% 90%;
+
+}
+.road{
+  width: 100vw;
+  background: #000;
+  height: 10px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+.lamp1,.lamp2{
+	background:url('../imgs/image/lamp-min.svg') no-repeat;
+	height: 90px;
+	width: 50px;
+	position: absolute;
+	z-index:0;
+}
+.lamp1{bottom:20px;right:8%;}
+.lamp2{bottom:20px;left:8%;}
+.cloud {
+  position: absolute;
+  width: 30px;
+  height: 8px;
+  background-color: #33405c;
+  border-radius: 100px;
+  -webkit-box-shadow: 0 1px 5px 0px rgba(50, 50, 50, 0.05);
+  box-shadow: 0 1px 5px 0px rgba(50, 50, 50, 0.05);
+  opacity: 1;
+}
+.cloud:nth-child(2){ top:14%;left:122%;}
+.cloud:before {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    top: -80%;
+    right: 10%;
+}.cloud:after {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: -44%;
+    left: 14%;
+    -webkit-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+}
+.cloud:after, .cloud:before {background-color: #22405c;}
+ .cloud:after, .cloud:before {display: block;content: ''; position: absolute;}
+.cloud {
+    top: 22%;
+    left: 111%;
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    -webkit-animation: cloud-movement-1 33s -17s infinite linear;
+    animation: cloud-movement-1 33s -17s infinite linear;
+    opacity: 0.92;
+    z-index: 1;
+}
+@keyframes cloud-movement-1 {
+  99.999% {opacity: 0.92;left: -10%;}
+  100% {opacity: 0;}
+}
+@keyframes moon{
+  0%{left:0;}
+  100%{left:55vw;}
+}
+.moon{
+  height:20px;
+  width:20px;
+  background: #ffff88;
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  top:3.5vh;
+  left:0;
+  box-shadow: inset #FFF1F9 -4px 4px 12px 4px, inset rgba(0, 0, 0, 0.2) -12px 12px 60px 4px, #1B3040 0 0 24px 1px, #FFF1F9 0 0 80px 4px;
+  animation: moon 140s infinite linear;
+  z-index:0;
+}
+.moon::before{
+	left: 0px;
+  content: "";
+  position: absolute;
+  width: 105%;
+  height: 105%;
+  border-radius: 45%;
+  background:#152c3f;
+	animation: dark 45s infinite linear alternate;
+}
+@keyframes dark{
+	0%{left:0;}
+	8%{left:0;}
+	92%{left:22px;}
+  100%{left:22px;}
+}
+/**/
+.driving{
+	margin:0 auto;
+  overflow: hidden;
+	position:relative;
+	width:60%;
+	height:210px;
+	animation:driving 18s linear infinite;
+	z-index:9;
+}
+.car{
+	position:absolute;
+  bottom:6.0%;
+  left:0%;
+  width:109px;
+  height:50px;
+  background:url('../imgs/image/driving.png') no-repeat;
+  filter:contrast(200%);
+  animation: car 1.0s steps(11) infinite;
+
+}
+@keyframes car {
+    to{background-position: -1199px 0;}
+}
+@-webkit-keyframes car {
+    to{background-position: -1199px 0;}
+}
+@-moz-keyframes car {
+    to{background-position: -1199px 0;}
+}
+@keyframes driving {
+	from{transform: translateX(130%);}
+  to{transform: translateX(-60%);}
+}
+@-webkit-keyframes driving {
+	from{transform: translateX(130%);}
+  to{transform: translateX(-60%);}
+}
+@-moz-keyframes driving {
+	from{transform: translateX(130%);}
+  to{transform: translateX(-60%);}
+}
+/**/
+.stars {position: absolute;animation-iteration-count: infinite;animation-name: twinkle;}
+.star-a {
+	width: 2px;
+	height: 2px;
+	border-radius: 50%;
+	background: rgba(243,226,232,0.65);
+	box-shadow: 0px 0px 6px 3px rgba(220,220,255,1);
+	filter:brightness(140%)contrast(280%);
+	top: 39%;
+	left: 38%;
+	animation-duration: 1.45s;
+}
+.star-b {
+	width:5px;
+	height:5px;
+	border-radius: 47%;
+	background: rgba(243,226,232,0.65);
+	box-shadow: 0px 0px 8px 4px rgba(220,220,255,1);
+	filter:brightness(140%)contrast(280%);
+	top: 50%;
+	right: 24%;
+	animation-duration: 1.25s;
+}
+@keyframes twinkle {
+	50% {transform: scale(0.5);opacity: 0.3;}
+}
+/*ここまで*/
+@media all and (max-width:800px){
+	.loop-wrapper {width:90vw;height:160px;background:linear-gradient(to bottom, #102c3f 0%, #30567b 75%,#eee 100%);}
+	.moon{height:15px;width:15px;}
+	.driving{
+		width:90%;
+		height:160px;
+		animation:drivingSp 13s linear infinite;
+	}
+	.car{transform: scale(0.8);bottom:0.3%;}
+}
+@media all and (max-width:545px){
+	.back{
+		width:100%;
+		height:100%;
+		background:url('../imgs/image/citySp_transparent.png') no-repeat;
+		background-position:center top;
+		background-size:100% 93%;
+	}
+	.road{height: 7px;}
+	.car{transform: scale(0.63);bottom:-0.5%;}
+	.lamp1,.lamp2{transform: scale(0.63);}
+	.lamp1,.lamp2{bottom:-2px;}
+}
+@keyframes drivingSp {
+	from{transform: translateX(100%);}
+  to{transform: translateX(-35%);}
+}
+@-webkit-keyframes drivingSp {
+	from{transform: translateX(100%);}
+  to{transform: translateX(-35%);}
+}
+@-moz-keyframes drivingSp {
+	from{transform: translateX(100%);}
+  to{transform: translateX(-35%);}
+}
+/*ここまで*/
+/*******************/
+/*footer-icon-arrow*/
+/*******************/
+.side_menu_list{display: block;margin-top:20px;}
+.roboto {font-family: Roboto;text-transform: uppercase;}
+.inline {display: inline-block;}
+.with_arrow {position: relative;padding-right: 0.5rem;line-height: 1}
+.with_arrow:after {
+	content: "";
+	position: absolute;
+	top: calc(50% - 0.7rem);
+	right: 35%;
+	display: block;
+	width: 1.2rem;
+	height: 1.2rem;
+	overflow: hidden;
+	background-size: contain;
+	background-repeat: no-repeat;
+	transform: translateX(-1.0rem);
+	opacity: 0;
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogPHBhdGggZD0ibTE2LjcyNiAxMC40NTEtNC43NTMtNC43MzY3LTQuNzM0MSA0LjczNjciIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogPHBhdGggZD0ibTExLjg0NSAxOC45MDN2LTEyLjcyOCIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMS41Ii8+Cjwvc3ZnPgo=);
+	transition: all .2s ease-out .4s
+}
+.with_arrow:hover:after {transform: translateX(0);opacity: 1;}
+.flip_text {overflow: hidden;}
+.flip_text span {display: block;line-height: 1.2;}
+.flip_text:hover span {-webkit-animation: up .4s ease-in-out forwards;animation: up .4s ease-in-out forwards}
+@-webkit-keyframes up {
+	30% {transform: translateY(-100%)}
+	35% {opacity: 0}
+	50% {transform: translateY(100%)}
+	90% {opacity: 1}
+	to {transform: translateY(0)}
+}
+@keyframes up {
+	30% {transform: translateY(-100%)}
+	35% {opacity: 0}
+	50% {transform: translateY(100%)}
+	90% {opacity: 1}
+	to {transform: translateY(0)}
+}
+/**/
