@@ -596,7 +596,7 @@ body{
 .car-back{
 	width:100%;
 	height:100%;
-	background:url('../image/city_transparent-min.png') no-repeat;
+	background:url('../imgs/image/city_transparent-min.png') no-repeat;
 	background-position:left -10%;
 	background-size:105% 90%;
 
@@ -610,7 +610,7 @@ body{
   left: 0px;
 }
 .lamp1,.lamp2{
-	background:url('../image/lamp-min.svg') no-repeat;
+	background:url('../imgs/image/lamp-min.svg') no-repeat;
 	height: 90px;
 	width: 50px;
 	position: absolute;
@@ -709,7 +709,7 @@ body{
   left:0%;
   width:109px;
   height:50px;
-  background:url('../image/driving.png') no-repeat;
+  background:url('../imgs/image/driving.png') no-repeat;
   filter:contrast(200%);
   animation: car 1.0s steps(11) infinite;
 
@@ -777,7 +777,7 @@ body{
 	.back{
 		width:100%;
 		height:100%;
-		background:url('../image/citySp_transparent.png') no-repeat;
+		background:url('../imgs/image/citySp_transparent.png') no-repeat;
 		background-position:center top;
 		background-size:100% 93%;
 	}
